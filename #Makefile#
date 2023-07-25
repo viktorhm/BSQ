@@ -3,15 +3,15 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
+Error: LINE_TOO_LONG        (line:  29, col:  82):	line too long
 #    By: tlerebou <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/07/21 11:09:31 by tlerebou          #+#    #+#              #
-#    Updated: 2023/07/25 09:52:08 by tlerebou         ###   ########.fr        #
+#    Updated: 2023/07/24 21:40:19 by tlerebou         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = bsq
-CFLAG= -Wall -Wextra -Werror -g
 
 all : $(NAME)
 
@@ -19,22 +19,22 @@ $(NAME) : ft_carre.o ft_outil.o ft_read.o ft_readfile.o ft_total.o ft_main.o
 	gcc -o $(NAME) ft_carre.o ft_outil.o ft_read.o ft_readfile.o ft_total.o ft_main.o
 
 ft_carre.o : ft_carre.c
-	gcc -o ft_carre.o -c ft_carre.c $(CFLAG)
+	gcc -o ft_carre.o -c ft_carre.c -Wall -Wextra -Werror
 
 ft_outil.o : ft_outil.c
-	gcc -o ft_outil.o -c ft_outil.c $(CFLAG)
+	gcc -o ft_outil.o -c ft_outil.c -Wall -Wextra -Werror
 
 ft_read.o : ft_read.c
-	gcc -o ft_read.o -c ft_read.c $(CFLAG)
+	gcc -o ft_read.o -c ft_read.c -Wall -Wextra -Werror
 
 ft_readfile.o : ft_readfile.c
-	gcc -o ft_readfile.o -c ft_readfile.c $(CFLAG)
+	gcc -o ft_readfile.o -c ft_readfile.c -Wall -Wextra -Werror
 
 ft_total.o : ft_total.c
-	gcc -o ft_total.o -c ft_total.c $(CFLAG)
+	gcc -o ft_total.o -c ft_total.c -Wall -Wextra -Werror
 
 ft_main.o : ft_main.c
-	gcc -o ft_main.o -c ft_main.c $(CFLAG)
+	gcc -o ft_main.o -c ft_main.c -Wall -Wextra -Werror
 
 clean :
 	rm -f *.o

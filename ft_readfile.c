@@ -1,33 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_main.c                                          :+:      :+:    :+:   */
+/*   ft_readfile.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tlerebou <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/24 21:27:37 by tlerebou          #+#    #+#             */
-/*   Updated: 2023/07/25 08:58:35 by tlerebou         ###   ########.fr       */
+/*   Created: 2023/07/24 18:01:44 by tlerebou          #+#    #+#             */
+/*   Updated: 2023/07/24 21:33:57 by tlerebou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft.h"
 
-int	main(int argc, char *argv[])
+int	ft_readfile(int taille_beffer, char *buffp, char *path)
 {
-	int	indice;
-	int	error;
+	int	fd;
+	int	size;
 
-	indice = 1;
-	while (argc > indice)
+	fd = open(path, O_RDONLY);
+	if (fd == -1)
 	{
-		error = ft_total(argv[indice]);
-		indice += 1;
-		if (error != 0)
-			write(1, "map error", 9);
-		if (argc > indice)
-		{
-			write(1, "\n__________________________________________________\n", 52);
-		}
+		return (fd);
 	}
-	return (0);
+	size = read(fd, buffp, taille_beffer);
+	if (size == -1)
+		return(-1);
+	return (size);
 }
